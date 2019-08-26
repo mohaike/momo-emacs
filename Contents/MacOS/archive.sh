@@ -6,6 +6,7 @@ target_path="${HOME}/Desktop"
 archive_name="emacs-26.2"
 archive_path="${target_path}/${archive_name}"
 archive_emacs="${archive_path}/emacs.app"
+archive_emacs_git="${archive_path}/emacs.app/.git"
 archive_readme="${archive_path}/README.txt"
 archive_path_zip="${archive_path}.zip"
 
@@ -45,6 +46,7 @@ clean_path()
 clean_path
 
 cp -R "${emacs_path}" "${archive_emacs}"
+rm -rf "${archive_emacs_git}"
 
 cat << MOMO > "${archive_readme}"
 将这里面的emacs移动到安装路径比如说 /Applications
@@ -58,10 +60,16 @@ cd "${target_path}"
 zip -r "${archive_name}.zip" "${archive_name}"
 rm -rf "${archive_name}"
 
+
+momo_push()
+{
+    scp ~/Desktop/emacs-26.2.zip \
+        eric@172.16.100.99:/Volumes/M/Users/eric/build/tool/mac/emacs
+    sh "${CURRENT_PATH}/git_push.sh"
+}
+momo_push
+
+
 log "ALL DONE!!!"
-
-
-scp ~/Desktop/emacs-26.2.zip \
-    eric@172.16.100.99:/Volumes/M/Users/eric/build/tool/mac/emacs
 
 

@@ -67,29 +67,9 @@ install_ag()
 {
     
     sh "${CURRENT_PATH}/evm_environment/install_ag.sh"
-    # mkdir -p "${local_cellar}"
-    # local_ag="${local_bin}/ag"
-    # local_ag_old="${local_bin}/ag.${t}"
-
-    # inside_ag="${CURRENT_PATH}/the_silver_searcher.zip"
-    
-    # if [[ -L "${local_ag}" ]] || [[ -f "${local_ag}" ]]
-    # then
-    #     mv "${local_ag}" "${local_ag_old}"
-    # fi
-
-    # local_silver_searcher="${local_cellar}/the_silver_searcher"
-    # local_silver_searcher_old="${local_silver_searcher}.${t}"
-    # if [[ -d "${local_silver_searcher}" ]]
-    # then
-    #     mv "${local_silver_searcher}" "${local_silver_searcher_old}"
-    # fi
-    # unzip "${inside_ag}" -d "${local_cellar}"
-    # new_ag="${local_cellar}/the_silver_searcher/2.2.0/bin/ag"
-    # ln -s "${new_ag}" "${local_ag}"
-    
-    
 }
 install_ag
+
+
 
 log "all done"
