@@ -55,12 +55,12 @@ t="$(date '+%Y-%m-%d_%H:%M:%S')"
 old_config="${HOME}/.emacs.d.${t}"
 config="${HOME}/.emacs.d"
 
-if [[ -d "${config}" ]]
-then
-    mv "${config}" "${old_config}"
-fi
+# if [[ -d "${config}" ]]
+# then
+#     mv "${config}" "${old_config}"
+# fi
 
-unzip "${local_config}" -d "${HOME}"
+# unzip "${local_config}" -d "${HOME}"
 
 
 install_ag()
